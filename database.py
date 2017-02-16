@@ -1,6 +1,6 @@
-__author__ = 'Tianshan'
-
 import pymongo
+
+__author__ = 'Tianshan'
 
 class Database(object):
     URI = "mongodb://127.0.0.1:27017"
@@ -17,8 +17,8 @@ class Database(object):
 
     @staticmethod
     def find(collection, query):
-        Database.DATABASE[collection].find(query)
+        return Database.DATABASE[collection].find(query)
 
     @staticmethod
     def find_one(collection, query):
-        Database.DATABASE[collection].find_one(query)
+        return Database.DATABASE[collection].find_one(query)

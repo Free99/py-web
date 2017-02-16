@@ -1,3 +1,5 @@
+from database import Database
+
 __author__ = 'Tianshan'
 
 class Post(object):

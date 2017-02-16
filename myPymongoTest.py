@@ -1,6 +1,7 @@
+import pymongo
+
 __author__ = 'Tianshan'
 
-import pymongo
 
 url = "mongodb://127.0.0.1:27017"
 client = pymongo.MongoClient(url)
