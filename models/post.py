@@ -1,16 +1,18 @@
+import uuid
+
 from database import Database
 
 __author__ = 'Tianshan'
 
 class Post(object):
 
-    def __init__(self, blog_id, title, content, author, date, id):
+    def __init__(self, blog_id, title, content, author, date, id = None):
         self.blog_id = blog_id
         self.title = title
         self.content = content
         self.author = author
         self.created_date = date
-        self.id = id
+        self.id = uuid.uuid4().hex if id is None else id
 
     def save_to_mongo(self):
         Database.insert(collection='posts',
