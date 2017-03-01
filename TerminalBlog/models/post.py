@@ -7,7 +7,7 @@ __author__ = 'Tianshan'
 
 class Post(object):
 
-    def __init__(self, blog_id, title, content, author, date = datetime.datetime.utcnow(), id = None):
+    def __init__(self, blog_id, title, content, author, date=datetime.datetime.utcnow(), id=None):
         self.blog_id = blog_id
         self.title = title
         self.content = content
@@ -31,6 +31,7 @@ class Post(object):
 
     @classmethod
     def from_mongo(cls, id):
+        # Get the post from database by id
         post_data = Database.find_one(collection='posts',
                                       query={'id': id})
         return cls(blog_id=post_data['blog_id'],
@@ -42,4 +43,5 @@ class Post(object):
 
     @staticmethod
     def from_blog(id):
+        # Return the list of posts from database by blog_id
         return [post for post in Database.find(collection='posts', query={'blog_id': id})]
