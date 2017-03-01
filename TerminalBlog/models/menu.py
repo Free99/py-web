@@ -1,5 +1,5 @@
-from database import Database
-from models.blog import Blog
+from TerminalBlog.models.blog import Blog
+from TerminalBlog.models.database import Database
 
 __author__ = 'Tianshan'
 
