@@ -1,7 +1,7 @@
 import datetime
 import uuid
 
-from ..common.database import Database
+from WebBlog.src.common.database import Database
 
 __author__ = 'Tianshan'
 
